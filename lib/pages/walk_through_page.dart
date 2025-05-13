@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pretium_finance/components/app_buttons.dart';
 import 'package:pretium_finance/components/slide_indicator.dart';
+import 'package:pretium_finance/pages/login_page.dart';
 import 'package:pretium_finance/resources/app_colors.dart';
 import 'package:pretium_finance/resources/app_strings.dart';
 import 'package:pretium_finance/resources/models/ui_models.dart';
+import 'package:pretium_finance/resources/navigation/navigation.dart';
 
 class WalkThroughPage extends StatefulWidget {
   const WalkThroughPage({super.key});
@@ -53,17 +55,23 @@ class _WalkThroughPageState extends State<WalkThroughPage> {
       backgroundColor: AppColors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(24, 32, 24, 24),
+          padding: const EdgeInsets.fromLTRB(24, 20, 18, 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              const Text(
-                'Skip',
-                textAlign: TextAlign.end,
-                style: TextStyle(
-                    color: AppColors.grey,
-                    fontSize: 15,
-                    fontWeight: FontWeight.w500),
+              TextButton(
+                onPressed: () {
+                  Navigation.navigateToScreen(
+                      context: context, screen: const LoginPage());
+                },
+                child: const Text(
+                  'Skip',
+                  textAlign: TextAlign.end,
+                  style: TextStyle(
+                      color: AppColors.grey,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500),
+                ),
               ),
               Expanded(
                 child: PageView.builder(
@@ -119,7 +127,7 @@ class _WalkThroughPageState extends State<WalkThroughPage> {
                             size: 60,
                           ),
                         ),
-                        const SizedBox(height: 36),
+                        const SizedBox(height: 32),
                         Text(
                           _slideList[index].title,
                           style: const TextStyle(
@@ -143,14 +151,23 @@ class _WalkThroughPageState extends State<WalkThroughPage> {
                     selectedIndex: _currentPage, slideList: _slideList),
               ),
               const SizedBox(height: 22),
-              PrimaryButton(
-                onTap: () {
-                  _pageController.nextPage(
-                    duration: _slideAnimationDuration,
-                    curve: Curves.easeIn,
-                  );
-                },
-                child: const Text('Next'),
+              Padding(
+                padding: const EdgeInsets.only(right: 6.0),
+                child: PrimaryButton(
+                  onTap: () {
+                    if (_currentPage == _slideList.length - 1) {
+                      Navigation.navigateToScreen(
+                          context: context, screen: const LoginPage());
+                    }
+                    _pageController.nextPage(
+                      duration: _slideAnimationDuration,
+                      curve: Curves.easeIn,
+                    );
+                  },
+                  child: Text(_currentPage == _slideList.length - 1
+                      ? 'Get Started'
+                      : 'Next'),
+                ),
               ),
             ],
           ),
