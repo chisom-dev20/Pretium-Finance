@@ -39,6 +39,20 @@ class AppStrings {
   static const resendCode = 'Resend Code';
   static const verificationCodeResent = 'Verification code resent';
 
+  static const forgotPasswordWithQuestionMark = 'Forget Password?';
+  static const enterYourEmailAddressToReceiveAPasswordResetCode =
+      'Enter your email address to receive a password reset code';
+  static const sendResetCode = 'Send Reset Code';
+
+  static const resetPassword = 'Reset Password';
+  static const enterTheCodeSentToYourEmail = 'Enter the code sent to your email and set a new password';
+  static const resetCode = 'Reset Code';
+  static const newPassword = 'New Password';
+  static const enterNewPassword = 'Enter new password';
+  static const confirmPassword = 'Confirm Password';
+  static const confirmNewPassword = 'Confirm new password';
+  static const enter4DigitResetCode = 'Enter 4-digit reset code';
+
   //SignUp
   static const createAccount = 'Create Account';
   static const simplifyYourCryptoPaymentsWithUs =

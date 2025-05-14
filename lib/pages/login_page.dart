@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pretium_finance/components/app_buttons.dart';
 import 'package:pretium_finance/components/app_form_fields.dart';
 import 'package:pretium_finance/pages/create_pin_page.dart';
+import 'package:pretium_finance/pages/forgot_password_page.dart';
 import 'package:pretium_finance/pages/sign_up_page.dart';
 import 'package:pretium_finance/pages/verify_account_page.dart';
 import 'package:pretium_finance/resources/app_colors.dart';
@@ -144,12 +145,18 @@ class _LoginPageState extends State<LoginPage> {
                         )
                       ],
                     ),
-                    const Text(
-                      AppStrings.forgotPassword,
-                      style: TextStyle(
-                          color: AppColors.primaryColor,
-                          fontWeight: FontWeight.w500),
-                    )
+                    TextButton(
+                      onPressed: () {
+                        Navigation.navigateToScreen(
+                            context: context, screen: const ForgotPasswordPage());
+                      },
+                      child: const Text(
+                        AppStrings.forgotPassword,
+                        style: TextStyle(
+                            color: AppColors.primaryColor,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 24),
@@ -195,7 +202,7 @@ class _LoginPageState extends State<LoginPage> {
                             color: AppColors.primaryColor,
                             fontWeight: FontWeight.w500),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ],
