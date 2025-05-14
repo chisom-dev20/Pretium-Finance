@@ -3,7 +3,6 @@ import 'package:pretium_finance/components/app_buttons.dart';
 import 'package:pretium_finance/components/app_dropdown_field.dart';
 import 'package:pretium_finance/components/app_form_fields.dart';
 import 'package:pretium_finance/components/bottom_sheets.dart';
-import 'package:pretium_finance/pages/create_pin_page.dart';
 import 'package:pretium_finance/pages/select_country_bottom_sheet.dart';
 import 'package:pretium_finance/resources/app_colors.dart';
 import 'package:pretium_finance/resources/app_strings.dart';
@@ -77,8 +76,7 @@ class _VerifyAccountPageState extends State<VerifyAccountPage> {
                     const SizedBox(height: 10),
                     PrimaryButton(
                       onTap: () {
-                        Navigation.navigateToScreen(
-                            context: context, screen: const CreatePinPage());
+                        Navigation.back(context: context, result: true);
                       },
                       child: const Text(AppStrings.verifyAccount),
                     ),

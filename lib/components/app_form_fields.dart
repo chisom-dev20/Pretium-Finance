@@ -127,58 +127,57 @@ class PrimaryTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          SizedBox(
-            height: 48,
-            child: TextFormField(
-              autofocus: autofocus,
-              style: const TextStyle(
-                fontSize: 13,
-                fontWeight: FontWeight.w500,
-              ),
-              cursorColor: AppColors.primaryColor,
-              decoration: InputDecoration(
-                  prefixIcon: prefixWidget,
-                  suffixIcon: suffixWidget,
-                  contentPadding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                  labelText: labelText ?? '',
-                  labelStyle:
-                      TextStyle(color: labelTextColor ?? AppColors.grey300),
-                  floatingLabelStyle:
-                      const TextStyle(color: AppColors.primaryColor),
-                  hintText: hintText ?? '',
-                  hintStyle: TextStyle(
-                    color: hintTextColor ?? AppColors.grey300,
-                    // color: Color.fromRGBO(166, 164, 164, 1),
-                    fontSize: 15,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: const BorderSide(color: AppColors.grey100),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: const BorderSide(color: AppColors.grey100),
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(4),
-                    borderSide: const BorderSide(
-                        color: AppColors.primaryColor, width: 2.0),
-                  ),
-                  errorText: errorText),
-              inputFormatters: inputFormatters,
-              keyboardType: keyboardType,
-              validator: validator,
-              controller: controller,
-              onChanged: onChanged,
-              obscureText: obscureText,
+      child: TextFormField(
+        autofocus: autofocus,
+        style: const TextStyle(
+          fontSize: 13,
+          fontWeight: FontWeight.w500,
+        ),
+        cursorColor: AppColors.primaryColor,
+        decoration: InputDecoration(
+            prefixIcon: prefixWidget,
+            suffixIcon: suffixWidget,
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            labelText: labelText ?? '',
+            labelStyle:
+                TextStyle(color: labelTextColor ?? AppColors.grey300),
+            floatingLabelStyle:
+                const TextStyle(color: AppColors.primaryColor),
+            hintText: hintText ?? '',
+            hintStyle: TextStyle(
+              color: hintTextColor ?? AppColors.grey300,
+              fontSize: 15,
+              fontWeight: FontWeight.w400,
             ),
-          ),
-        ],
+            focusedErrorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: BorderSide(color: Colors.red.shade900, width: 2),
+            ),
+            errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: Colors.red),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: AppColors.grey100),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: AppColors.grey100),
+            ),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(4),
+              borderSide: const BorderSide(
+                  color: AppColors.primaryColor, width: 2.0),
+            ),
+            errorText: errorText),
+        inputFormatters: inputFormatters,
+        keyboardType: keyboardType,
+        validator: validator,
+        controller: controller,
+        onChanged: onChanged,
+        obscureText: obscureText,
       ),
     );
   }
