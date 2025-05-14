@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pretium_finance/components/app_buttons.dart';
 import 'package:pretium_finance/components/app_form_fields.dart';
 import 'package:pretium_finance/pages/sign_up_page.dart';
+import 'package:pretium_finance/pages/verify_account_page.dart';
 import 'package:pretium_finance/resources/app_colors.dart';
 import 'package:pretium_finance/resources/app_strings.dart';
 import 'package:pretium_finance/resources/navigation/navigation.dart';
@@ -37,35 +38,39 @@ class _LoginPageState extends State<LoginPage> {
         child: Padding(
           padding: const EdgeInsets.only(left: 24.0, top: 80, right: 24),
           child: ListView(
-            // padding: const EdgeInsets.all(0),
             physics: const NeverScrollableScrollPhysics(),
             children: [
-              Container(
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: AppColors.primary50,
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: const Icon(
-                  Icons.account_balance_wallet_rounded,
-                  color: AppColors.primaryColor,
-                  size: 30,
-                ),
-              ),
-              const SizedBox(height: 24),
-              const Text(
-                AppStrings.welcomeBack,
-                style: TextStyle(
-                    color: AppColors.black,
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 14),
-              const Text(
-                AppStrings.signInToContinue,
-                style: TextStyle(
-                  color: AppColors.grey,
-                ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: AppColors.primary50,
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: const Icon(
+                      Icons.account_balance_wallet_rounded,
+                      color: AppColors.primaryColor,
+                      size: 30,
+                    ),
+                  ),
+                  const SizedBox(height: 24),
+                  const Text(
+                    AppStrings.welcomeBack,
+                    style: TextStyle(
+                        color: AppColors.black,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 14),
+                  const Text(
+                    AppStrings.signInToContinue,
+                    style: TextStyle(
+                      color: AppColors.grey,
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(height: 45),
               const PrimaryTextFormField(
@@ -117,8 +122,12 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
               const SizedBox(height: 24),
-              const PrimaryButton(
-                child: Text(AppStrings.login),
+              PrimaryButton(
+                onTap: () {
+                  Navigation.navigateToScreen(
+                      context: context, screen: const VerifyAccountPage());
+                },
+                child: const Text(AppStrings.login),
               ),
               const SizedBox(height: 28),
               Row(

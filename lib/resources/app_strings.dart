@@ -30,6 +30,15 @@ class AppStrings {
   static const dontHaveAnAccount = "Don't have an account?";
   static const signUp = 'Sign Up';
 
+  static const verifyAccount = 'Verify Account';
+  static const enterTheVerificationCodeSentToYourEmail =
+      'Enter the verification code sent to your email';
+  static const selectCountry = 'Select Country';
+  static const enter4DigitCode = 'Enter 4-digit code';
+  static const didntReceiveTheCode = "Didn't receive the code?";
+  static const resendCode = 'Resend Code';
+  static const verificationCodeResent = 'Verification code resent';
+
   //SignUp
   static const createAccount = 'Create Account';
   static const simplifyYourCryptoPaymentsWithUs =

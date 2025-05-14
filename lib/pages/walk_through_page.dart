@@ -18,7 +18,7 @@ class _WalkThroughPageState extends State<WalkThroughPage> {
   late PageController _pageController;
   int _currentPage = 0;
 
-  final Duration _slideAnimationDuration = const Duration(milliseconds: 300);
+  final Duration _slideAnimationDuration = const Duration(milliseconds: 350);
 
   final List<Carousel> _slideList = [
     Carousel(

@@ -139,7 +139,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 color: AppColors.primaryColor,
                                 fontWeight: FontWeight.w500),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ],
