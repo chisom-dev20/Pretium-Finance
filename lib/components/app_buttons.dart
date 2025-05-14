@@ -59,14 +59,14 @@ class PrimaryButton extends StatelessWidget {
         if (states.contains(MaterialState.disabled)) {
           return Colors.grey;
         }
-        return backgroundColor; // Defer to the widget's default.
+        return backgroundColor;
       }),
       foregroundColor: MaterialStateProperty.resolveWith<Color?>(
           (Set<MaterialState> states) {
         if (states.contains(MaterialState.disabled)) {
           return AppColors.white;
         }
-        return foregroundColor; // Defer to the widget's default.
+        return foregroundColor;
       }),
     );
   }
@@ -155,16 +155,16 @@ class PrimaryOutlinedButton extends StatelessWidget {
       backgroundColor: MaterialStateProperty.resolveWith<Color?>(
           (Set<MaterialState> states) {
         if (states.contains(MaterialState.disabled)) {
-          return Colors.amber;
+          return Colors.grey;
         }
-        return backgroundColor; // Defer to the widget's default.
+        return backgroundColor;
       }),
       foregroundColor: MaterialStateProperty.resolveWith<Color?>(
           (Set<MaterialState> states) {
         if (states.contains(MaterialState.disabled)) {
           return AppColors.white;
         }
-        return foregroundColor; // Defer to the widget's default.
+        return foregroundColor;
       }),
     );
   }

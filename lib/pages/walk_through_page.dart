@@ -65,7 +65,7 @@ class _WalkThroughPageState extends State<WalkThroughPage> {
                       context: context, screen: const LoginPage());
                 },
                 child: const Text(
-                  'Skip',
+                  AppStrings.skip,
                   textAlign: TextAlign.end,
                   style: TextStyle(
                       color: AppColors.grey,
@@ -165,8 +165,8 @@ class _WalkThroughPageState extends State<WalkThroughPage> {
                     );
                   },
                   child: Text(_currentPage == _slideList.length - 1
-                      ? 'Get Started'
-                      : 'Next'),
+                      ? AppStrings.getStarted
+                      : AppStrings.next),
                 ),
               ),
             ],

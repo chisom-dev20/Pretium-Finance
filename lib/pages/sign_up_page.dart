@@ -67,17 +67,17 @@ class _SignUpPageState extends State<SignUpPage> {
                     const PrimaryTextFormField(
                       labelText: AppStrings.firstName,
                       prefixWidget: Icon(Icons.person_outline_rounded),
-                hintText: 'Enter your first name',
+                      hintText: AppStrings.enterYourFirstName,
                     ),
                     const PrimaryTextFormField(
                       labelText: AppStrings.lastName,
                       prefixWidget: Icon(Icons.person_outline_rounded),
-                hintText: 'Enter your last name',
+                      hintText: AppStrings.enterYourLastName,
                     ),
                     const PrimaryTextFormField(
                       labelText: AppStrings.email,
                       prefixWidget: Icon(Icons.email_outlined),
-                hintText: 'Enter your email',
+                      hintText: AppStrings.enterYourEmail,
                     ),
                     PrimaryTextFormField(
                       labelText: AppStrings.password,
@@ -89,7 +89,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             ? Icons.visibility_outlined
                             : Icons.visibility_off_outlined),
                       ),
-                hintText: 'Create a password',
+                      hintText: AppStrings.createAPassword,
                     ),
                     Row(
                       children: [
@@ -134,7 +134,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 context: context, screen: const LoginPage());
                           },
                           child: const Text(
-                            AppStrings.logIn,
+                            AppStrings.login,
                             style: TextStyle(
                                 color: AppColors.primaryColor,
                                 fontWeight: FontWeight.w500),
@@ -153,7 +153,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   decoration: BoxDecoration(
                       color: AppColors.primaryColor,
                       borderRadius: BorderRadius.circular(6)),
-                  child: const Text('Opening, Terms and Conditions...',
+                  child: const Text(AppStrings.openingTermsAndConditions,
                       style: TextStyle(
                         color: AppColors.white,
                       )),

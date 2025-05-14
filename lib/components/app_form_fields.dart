@@ -128,33 +128,6 @@ class PrimaryTextFormField extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          // Visibility(
-          //   visible: labelText != null,
-          //   child: Padding(
-          //     padding: const EdgeInsets.only(bottom: 6),
-          //     child: Row(
-          //       children: [
-          //         Text(
-          //           labelText ?? '',
-          //           style: const TextStyle(
-          //               color: AppColors.grey,
-          //               fontSize: 16,
-          //               fontWeight: FontWeight.w400),
-          //         ),
-          //         Visibility(
-          //           visible: required,
-          //           child: Text(
-          //             helperText ?? ' (Optional)',
-          //             style: const TextStyle(
-          //                 color: Color.fromRGBO(154, 154, 154, 1),
-          //                 fontSize: 13,
-          //                 fontWeight: FontWeight.w400),
-          //           ),
-          //         ),
-          //       ],
-          //     ),
-          //   ),
-          // ),
           SizedBox(
             height: 48,
             child: TextFormField(

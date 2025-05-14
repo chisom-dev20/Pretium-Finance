@@ -71,8 +71,8 @@ class _LoginPageState extends State<LoginPage> {
               const PrimaryTextFormField(
                 prefixWidget: Icon(Icons.email_outlined),
                 labelText: AppStrings.email,
-                labelTextColor: AppColors.textFieldHintText,
-                hintText: 'Enter your email',
+                labelTextColor: AppColors.textFieldHintTextColor,
+                hintText: AppStrings.enterYourEmail,
               ),
               PrimaryTextFormField(
                 prefixWidget: const Icon(Icons.lock_outline_rounded),
@@ -84,8 +84,8 @@ class _LoginPageState extends State<LoginPage> {
                       : Icons.visibility_off_outlined),
                 ),
                 labelText: AppStrings.password,
-                labelTextColor: AppColors.textFieldHintText,
-                hintText: 'Enter your password',
+                labelTextColor: AppColors.textFieldHintTextColor,
+                hintText: AppStrings.enterYourPassword,
               ),
               // const SizedBox(height: 20),
               Row(
@@ -118,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const SizedBox(height: 24),
               const PrimaryButton(
-                child: Text(AppStrings.logIn),
+                child: Text(AppStrings.login),
               ),
               const SizedBox(height: 28),
               Row(

@@ -23,7 +23,7 @@ class SlideIndicator extends StatelessWidget {
             decoration: BoxDecoration(
                 color: selectedIndex == entry.key
                     ? AppColors.primaryColor
-                    : AppColors.deepPrimary50,
+                    : AppColors.primary100,
                 borderRadius: BorderRadius.circular(8)),
           );
         }).toList(),
