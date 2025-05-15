@@ -91,6 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                   labelText: AppStrings.email,
                   labelTextColor: AppColors.textFieldHintTextColor,
                   hintText: AppStrings.enterYourEmail,
+                  keyboardType: TextInputType.emailAddress,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return emptyValidatorText(AppStrings.email);
@@ -115,6 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                   labelText: AppStrings.password,
                   labelTextColor: AppColors.textFieldHintTextColor,
                   hintText: AppStrings.enterYourPassword,
+                  keyboardType: TextInputType.visiblePassword,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return emptyValidatorText(AppStrings.password);

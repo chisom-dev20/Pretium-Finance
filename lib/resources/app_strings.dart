@@ -45,7 +45,8 @@ class AppStrings {
   static const sendResetCode = 'Send Reset Code';
 
   static const resetPassword = 'Reset Password';
-  static const enterTheCodeSentToYourEmail = 'Enter the code sent to your email and set a new password';
+  static const enterTheCodeSentToYourEmail =
+      'Enter the code sent to your email and set a new password';
   static const resetCode = 'Reset Code';
   static const newPassword = 'New Password';
   static const enterNewPassword = 'Enter new password';
@@ -66,4 +67,13 @@ class AppStrings {
   static const alreadyHaveAnAccount = 'Already have an account?';
   static const login = 'Login';
   static const openingTermsAndConditions = 'Opening, Terms and Conditions...';
+
+  //Home
+  static const walletBalance = 'Wallet Balance';
+  static const financialServices = 'Financial Services';
+  static const mtn = 'MTN';
+  static const airtelTigo = 'AirtelTigo';
+  static const telecel = 'Telecel';
+  static const recentTransactions = 'Recent transactions';
+  static const seeAll = 'See all';
 }

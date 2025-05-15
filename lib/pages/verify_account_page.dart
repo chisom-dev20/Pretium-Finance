@@ -71,7 +71,7 @@ class _VerifyAccountPageState extends State<VerifyAccountPage> {
                       labelTextColor: AppColors.primaryColor,
                       hintText: AppStrings.enter4DigitCode,
                       suffixWidget: Icon(Icons.security),
-                      // errorText: 'Please enter verification code',
+                      keyboardType: TextInputType.number,
                     ),
                     const SizedBox(height: 10),
                     PrimaryButton(

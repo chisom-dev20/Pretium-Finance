@@ -12,6 +12,21 @@ class ResetPasswordPage extends StatefulWidget {
 }
 
 class _ResetPasswordPageState extends State<ResetPasswordPage> {
+  bool isPasswordVisible = false;
+  bool isConfirmPasswordVisible = false;
+
+  void togglePasswordVisibility() {
+    setState(() {
+      isPasswordVisible = !isPasswordVisible;
+    });
+  }
+
+  void toggleConfirmPasswordVisibility() {
+    setState(() {
+      isConfirmPasswordVisible = !isConfirmPasswordVisible;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,27 +57,41 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                   const SizedBox(height: 32),
                   const PrimaryTextFormField(
                     labelText: AppStrings.resetCode,
+                    labelTextColor: AppColors.primaryColor,
                     hintText: AppStrings.enter4DigitResetCode,
-                    prefixWidget:
-                        Icon(Icons.lock_reset_outlined),
-                    keyboardType: TextInputType.emailAddress,
+                    prefixWidget: Icon(Icons.lock_reset_outlined),
+                    keyboardType: TextInputType.number,
                     maxLines: 1,
                   ),
-                  const PrimaryTextFormField(
+                  PrimaryTextFormField(
                     labelText: AppStrings.newPassword,
+                    labelTextColor: AppColors.primaryColor,
                     hintText: AppStrings.enterNewPassword,
-                    prefixWidget:
-                        Icon(Icons.lock_outline_rounded),
-                    keyboardType: TextInputType.emailAddress,
+                    prefixWidget: const Icon(Icons.lock_outline_rounded),
+                    keyboardType: TextInputType.visiblePassword,
                     maxLines: 1,
+                    obscureText: !isPasswordVisible,
+                    suffixWidget: IconButton(
+                      onPressed: togglePasswordVisibility,
+                      icon: Icon(isPasswordVisible
+                          ? Icons.visibility_outlined
+                          : Icons.visibility_off_outlined),
+                    ),
                   ),
-                  const PrimaryTextFormField(
+                  PrimaryTextFormField(
                     labelText: AppStrings.confirmPassword,
+                    labelTextColor: AppColors.primaryColor,
                     hintText: AppStrings.confirmNewPassword,
-                    prefixWidget:
-                        Icon(Icons.lock_outline_rounded),
-                    keyboardType: TextInputType.emailAddress,
+                    prefixWidget: const Icon(Icons.lock_outline_rounded),
+                    keyboardType: TextInputType.visiblePassword,
                     maxLines: 1,
+                    obscureText: !isConfirmPasswordVisible,
+                    suffixWidget: IconButton(
+                      onPressed: toggleConfirmPasswordVisibility,
+                      icon: Icon(isConfirmPasswordVisible
+                          ? Icons.visibility_outlined
+                          : Icons.visibility_off_outlined),
+                    ),
                   ),
                   const SizedBox(height: 10),
                   PrimaryButton(

@@ -7,7 +7,6 @@ import 'package:pretium_finance/resources/app_colors.dart';
 import 'package:pretium_finance/resources/app_strings.dart';
 import 'package:pretium_finance/resources/navigation/navigation.dart';
 import 'package:url_launcher/url_launcher.dart';
-// import 'package:url_launcher/url_launcher.dart';
 
 const String termsAndConditionsUrl = 'https://pretium.africa/term-of-use';
 
@@ -19,7 +18,6 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   AutovalidateMode _autovalidateMode = AutovalidateMode.disabled;
 
@@ -88,8 +86,9 @@ class _SignUpPageState extends State<SignUpPage> {
                         labelText: AppStrings.firstName,
                         prefixWidget: const Icon(Icons.person_outline_rounded),
                         hintText: AppStrings.enterYourFirstName,
+                        keyboardType: TextInputType.name,
                         validator: (value) {
-                          if(value == null || value.isEmpty) {
+                          if (value == null || value.isEmpty) {
                             return emptyValidatorText(AppStrings.firstName);
                           }
                           return null;
@@ -99,8 +98,9 @@ class _SignUpPageState extends State<SignUpPage> {
                         labelText: AppStrings.lastName,
                         prefixWidget: const Icon(Icons.person_outline_rounded),
                         hintText: AppStrings.enterYourLastName,
+                        keyboardType: TextInputType.name,
                         validator: (value) {
-                          if(value == null || value.isEmpty) {
+                          if (value == null || value.isEmpty) {
                             return emptyValidatorText(AppStrings.lastName);
                           }
                           return null;
@@ -110,11 +110,14 @@ class _SignUpPageState extends State<SignUpPage> {
                         labelText: AppStrings.email,
                         prefixWidget: const Icon(Icons.email_outlined),
                         hintText: AppStrings.enterYourEmail,
+                        keyboardType: TextInputType.emailAddress,
                         validator: (value) {
-                          if(value == null || value.isEmpty) {
+                          if (value == null || value.isEmpty) {
                             return emptyValidatorText(AppStrings.email);
                           }
-                          if(!RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$').hasMatch(value)) {
+                          if (!RegExp(
+                                  r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
+                              .hasMatch(value)) {
                             return 'Please enter a valid email address';
                           }
                           return null;
@@ -131,11 +134,12 @@ class _SignUpPageState extends State<SignUpPage> {
                               : Icons.visibility_off_outlined),
                         ),
                         hintText: AppStrings.createAPassword,
+                        keyboardType: TextInputType.visiblePassword,
                         validator: (value) {
-                          if(value == null || value.isEmpty) {
+                          if (value == null || value.isEmpty) {
                             return emptyValidatorText(AppStrings.password);
                           }
-                          if(value.length < 6) {
+                          if (value.length < 6) {
                             return 'Password must be at least 6 characters';
                           }
                           return null;
@@ -180,20 +184,18 @@ class _SignUpPageState extends State<SignUpPage> {
                         onTap: () async {
                           if (!_formKey.currentState!.validate()) {
                             setState(() {
-                              _autovalidateMode = AutovalidateMode.onUserInteraction;
+                              _autovalidateMode =
+                                  AutovalidateMode.onUserInteraction;
                             });
                             return;
                           }
                           bool? result = await Navigation.navigateToScreen(
-                            context: context, 
-                            screen: const VerifyAccountPage()
-                          );
-                          if(result == true) {
-                            if(!mounted) return;
+                              context: context,
+                              screen: const VerifyAccountPage());
+                          if (result == true) {
+                            if (!mounted) return;
                             Navigation.navigateToScreen(
-                              context: context, 
-                              screen: const LoginPage()
-                            );
+                                context: context, screen: const LoginPage());
                           }
                         },
                         child: const Text(AppStrings.createAccount),
