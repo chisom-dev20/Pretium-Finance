@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pretium_finance/pages/home_page.dart';
 import 'package:pretium_finance/resources/app_colors.dart';
 import 'package:pretium_finance/resources/navigation/navigation.dart';
+import 'package:pretium_finance/resources/navigation/navigation_host_page.dart';
 
 class CreatePinPage extends StatefulWidget {
   const CreatePinPage({super.key});
@@ -21,7 +21,7 @@ class _CreatePinPageState extends State<CreatePinPage> {
     }
 
     if (number.length == 4) {
-      Navigation.navigateToScreen(context: context, screen: const HomePage());
+      Navigation.navigateToScreen(context: context, screen: const NavigationHostPage());
     }
   }
 
