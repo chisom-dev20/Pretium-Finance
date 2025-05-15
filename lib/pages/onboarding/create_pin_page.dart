@@ -21,7 +21,8 @@ class _CreatePinPageState extends State<CreatePinPage> {
     }
 
     if (number.length == 4) {
-      Navigation.navigateToScreen(context: context, screen: const NavigationHostPage());
+      Navigation.navigateToScreen(
+          context: context, screen: const NavigationHostPage());
     }
   }
 
@@ -116,10 +117,7 @@ class _CreatePinPageState extends State<CreatePinPage> {
               children: [
                 iconButton(
                   icon: Icons.fingerprint,
-                  onTap: () {
-                    print("Fingerprint pressed");
-                    //TODO: Trigger biometric auth
-                  },
+                  onTap: () {},
                 ),
                 numberButton(
                   number: '0',
@@ -166,24 +164,31 @@ class _CreatePinPageState extends State<CreatePinPage> {
   }
 
   Widget numberButton({required String number, required Function onTap}) {
-    return InkWell(
-      onTap: () {
-        onTap(number);
-      },
-      child: Padding(
-        padding: const EdgeInsets.only(bottom: 10),
-        child: Container(
-          padding: const EdgeInsets.all(16),
-          decoration: const BoxDecoration(
-            color: AppColors.transparent,
-            shape: BoxShape.circle,
-          ),
-          child: Text(
-            number,
-            style: const TextStyle(
-              color: AppColors.white,
-              fontSize: 38,
-              fontWeight: FontWeight.w300,
+    return Material(
+      color: AppColors.transparent,
+      shape: const CircleBorder(),
+      child: InkWell(
+        customBorder: const CircleBorder(),
+        onTap: () {
+          onTap(number);
+        },
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 10),
+          child: Container(
+            padding: const EdgeInsets.all(16),
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              color: AppColors.transparent,
+            ),
+            child: Center(
+              child: Text(
+                number,
+                style: const TextStyle(
+                  color: AppColors.white,
+                  fontSize: 38,
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
             ),
           ),
         ),
@@ -192,20 +197,25 @@ class _CreatePinPageState extends State<CreatePinPage> {
   }
 
   Widget iconButton({required IconData icon, required VoidCallback onTap}) {
-    return InkWell(
-      onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.only(bottom: 10),
-        child: Container(
-          padding: const EdgeInsets.all(16),
-          decoration: const BoxDecoration(
-            color: AppColors.transparent,
-            shape: BoxShape.circle,
-          ),
-          child: Icon(
-            icon,
-            color: AppColors.white,
-            size: 30,
+    return Material(
+      color: AppColors.transparent,
+      shape: const CircleBorder(),
+      child: InkWell(
+        customBorder: const CircleBorder(),
+        onTap: onTap,
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 10),
+          child: Container(
+            padding: const EdgeInsets.all(16),
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              color: AppColors.transparent,
+            ),
+            child: Icon(
+              icon,
+              color: AppColors.white,
+              size: 30,
+            ),
           ),
         ),
       ),
