@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pretium_finance/pages/walk_through_page.dart';
+import 'package:pretium_finance/pages/onboarding/walk_through_page.dart';
 import 'package:pretium_finance/resources/app_colors.dart';
 import 'package:pretium_finance/resources/app_images.dart';
 import 'package:pretium_finance/resources/navigation/navigation.dart';

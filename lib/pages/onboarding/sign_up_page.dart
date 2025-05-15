@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pretium_finance/components/app_buttons.dart';
 import 'package:pretium_finance/components/app_form_fields.dart';
-import 'package:pretium_finance/pages/login_page.dart';
-import 'package:pretium_finance/pages/verify_account_page.dart';
+import 'package:pretium_finance/pages/onboarding/login_page.dart';
+import 'package:pretium_finance/pages/onboarding/verify_account_page.dart';
 import 'package:pretium_finance/resources/app_colors.dart';
 import 'package:pretium_finance/resources/app_strings.dart';
 import 'package:pretium_finance/resources/navigation/navigation.dart';

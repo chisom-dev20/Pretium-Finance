@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pretium_finance/components/app_buttons.dart';
 import 'package:pretium_finance/components/app_form_fields.dart';
-import 'package:pretium_finance/pages/reset_password_page.dart';
+import 'package:pretium_finance/pages/onboarding/reset_password_page.dart';
 import 'package:pretium_finance/resources/app_colors.dart';
 import 'package:pretium_finance/resources/app_strings.dart';
 import 'package:pretium_finance/resources/navigation/navigation.dart';
