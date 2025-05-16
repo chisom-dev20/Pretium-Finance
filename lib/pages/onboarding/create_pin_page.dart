@@ -43,7 +43,7 @@ class _CreatePinPageState extends State<CreatePinPage> {
             ),
             const SizedBox(height: 16),
             const Text(
-              'Verify your PIN to unlock',
+              'Create a 4-digit PIN to secure your account',
               style: TextStyle(
                   color: AppColors.white,
                   fontSize: 18,

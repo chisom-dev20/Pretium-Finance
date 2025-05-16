@@ -79,9 +79,10 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                     PrimaryButton(
                       onTap: () {
                         if (_formKey.currentState?.validate() == true) {
-                          showCustomAlert(
+                          Utils.showCustomAlert(
                             context: context,
-                            email: emailController.text,
+                            title: 'Reset Code Sent',
+                            content: 'We have sent a password reset \ncode to\n${emailController.text}',
                             onPressed: () {
                               Navigation.navigateToScreen(
                                   context: context,
@@ -90,7 +91,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                           );
                         } else {
                           setState(() {
-                            _autovalidateMode = AutovalidateMode.always;
+                            _autovalidateMode = AutovalidateMode.onUserInteraction;
                           });
                         }
                       },

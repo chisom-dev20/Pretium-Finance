@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pretium_finance/pages/onboarding/forgot_password_page.dart';
 import 'package:pretium_finance/pages/home_page.dart';
 import 'package:pretium_finance/resources/app_colors.dart';
 
@@ -13,7 +12,7 @@ class NavigationHostPage extends StatefulWidget {
 class _NavigationHostPageState extends State<NavigationHostPage> {
   int currentPage = 0;
 
-  final List<Widget> pages = const [HomePage(), ForgotPasswordPage()];
+  final List<Widget> pages = const [HomePage(), SizedBox()];
 
   final List<IconData> navItems = [
     Icons.account_balance_wallet,
